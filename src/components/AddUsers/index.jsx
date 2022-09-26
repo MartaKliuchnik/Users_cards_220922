@@ -1,12 +1,12 @@
 import React from 'react';
 import s from './style.module.sass'
 
-export default function AddUsers() {
+export default function AddUsers({addUsersCard}) {
 
     const submit = event => {
         event.preventDefault();
         const { name_user, gender_user, link_avatar } = event.target;
-        console.log(name_user.value, gender_user.value, link_avatar.value);
+        addUsersCard(name_user.value, gender_user.value, link_avatar.value);
         name_user.value = '';
         gender_user.value = '';
         link_avatar.value = ''
