@@ -6,7 +6,7 @@ function App() {
 
   const [users, setUsers] = useState([]);
 
-  const addUsersCard = (name_user, gender_user, link_avatar) => 
+  const addUsersCard = (name_user, gender_user, link_avatar) => {
     setUsers([...users,
     {
       id: Date.now(),
@@ -15,6 +15,7 @@ function App() {
       avatar: link_avatar
     }
     ])
+  }
   
 
   return (

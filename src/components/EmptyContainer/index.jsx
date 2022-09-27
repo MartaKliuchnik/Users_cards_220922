@@ -4,7 +4,7 @@ import s from './style.module.sass'
 export default function EmptyContainer() {
     return (
         <div className={s.emptyCard}>
-            <p>Добавьте первого пользователя</p>
+            <p>Нет зарегистрированных пользователей</p>
         </div>
     )
 }
