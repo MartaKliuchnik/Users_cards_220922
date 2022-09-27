@@ -4,15 +4,18 @@ import CardUser from '../CardUser';
 import { genderLabels } from './genderLabels';
 import Button from '../UI/Button';
 
-export default function GenderCards({ users, gender }) {
+export default function GenderCards({ users, gender, deleteCard, deleteGender }) {
     return (
         <div className={s.cardsContainer}>
             <p>{genderLabels[gender]}</p>
             <div className={s.cards}>
-                {users.map(user => <CardUser key={user.id} {...user} />)}
+                {users.map(user => <CardUser
+                    key={user.id}
+                    {...user}
+                    deleteCard={deleteCard} />)}
             </div>
             <div className={s.close_btn}>
-                <Button/>
+                <Button onClick={() => deleteGender(gender)} />
             </div>
         </div>
     )

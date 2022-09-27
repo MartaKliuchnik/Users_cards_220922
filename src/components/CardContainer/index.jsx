@@ -3,18 +3,9 @@ import s from './style.module.sass';
 import GenderCards from '../GenderCards';
 import EmptyContainer from '../EmptyContainer';
 
-export default function CardContainer({ users }) {
+export default function CardContainer({ users, deleteCard, deleteGender }) {
     
-    const result = [
-        // {
-        //     id: 1,
-        //     genders: []
-        // },
-        // {
-        //     id: 2,
-        //     genders: []
-        // }
-    ];
+    const result = [];
 
     users.forEach(user => {
         const curGender = result.find(el => el.id === user.gender);
@@ -28,7 +19,7 @@ export default function CardContainer({ users }) {
         }
     })
 
-    // result.sort((a, b) => +a.id - +b.id);
+    result.sort((a, b) => +a.id - +b.id);
 
     return (
         <div className={['wrapper', s.container].join(' ')}> 
@@ -39,7 +30,9 @@ export default function CardContainer({ users }) {
                     <GenderCards
                         key={user.id}
                         gender={user.id}
-                        users={user.genders} />
+                        users={user.genders}
+                        deleteCard={deleteCard}
+                        deleteGender={deleteGender} />
                     )
             }
         </div>

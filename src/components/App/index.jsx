@@ -17,11 +17,19 @@ function App() {
     ])
   }
   
+  const deleteCard = (id) => setUsers(users.filter(user => user.id !== id));
+
+  const deleteGender = (gender) => setUsers(users.filter(user => user.gender !== gender))
+  
+  
 
   return (
     <>
       <AddUsers addUsersCard={addUsersCard}/>
-      <CardContainer users={users} />
+      <CardContainer
+        users={users}
+        deleteCard={deleteCard}
+        deleteGender={deleteGender} />
     </>
   );
 }
