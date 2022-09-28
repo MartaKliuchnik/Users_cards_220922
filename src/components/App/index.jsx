@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddUsers from "../AddUsers";
 import CardContainer from "../CardContainer";
 
-function App() {
 
-  const [users, setUsers] = useState([]);
+function App() {
+  const [users, _setUsers] = useState([]);
+
+  const setUsers = (state) => {
+    _setUsers(state);
+    localStorage.setItem('users', JSON.stringify(state));
+  }
+
+  useEffect(() => {
+    const users = JSON.parse(localStorage.getItem('users')) ?? [];
+  }, []);
 
   const addUsersCard = (name_user, gender_user, link_avatar) => {
     setUsers([...users,

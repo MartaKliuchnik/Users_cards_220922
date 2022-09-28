@@ -17,13 +17,13 @@ export default function AddUsers({addUsersCard}) {
     return (
         <form onSubmit={submit} className={['wrapper', s.form].join(' ')}>
             <div className={s.container_form}>
-                <input type="text" placeholder='Имя' name='name_user' />
-                <select defaultValue="" className={s.gender_input} name="gender_user">
+                <input required type="text" placeholder='Имя' name='name_user' />
+                <input required type="text" placeholder='Ссылка на аватарку' name="link_avatar" />
+                <select required defaultValue="" className={s.gender_input} name="gender_user" >
                     <option value="" disabled hidden>Пол</option>
                     <option value='1'>Мужчина</option>
                     <option value='2'>Женщина</option>
                 </select>
-                <input type="text" placeholder='Ссылка на аватарку' name="link_avatar" />
                 <button>Добавить</button>
             </div>
         </form>
