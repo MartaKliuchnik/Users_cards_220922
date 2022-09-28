@@ -3,7 +3,8 @@ import s from './style.module.sass';
 import GenderCards from '../GenderCards';
 import EmptyContainer from '../EmptyContainer';
 
-export default function CardContainer({ users, deleteCard, deleteGender }) {
+
+export default function CardContainer({ users, deleteCard, deleteGender, addEditCard }) {
     
     const result = [];
 
@@ -29,12 +30,14 @@ export default function CardContainer({ users, deleteCard, deleteGender }) {
                 : result.map(user =>
                     <GenderCards
                         key={user.id}
-                        gender={user.id}
                         users={user.genders}
+                        gender={user.id}
                         deleteCard={deleteCard}
-                        deleteGender={deleteGender} />
+                        deleteGender={deleteGender}
+                        addEditCard={addEditCard} />
                     )
             }
+            
         </div>
     )
 }

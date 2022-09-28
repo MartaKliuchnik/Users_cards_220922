@@ -8,7 +8,6 @@ export default function AddUsers({addUsersCard}) {
         event.preventDefault();
         const { name_user, gender_user, link_avatar } = event.target;
         addUsersCard(name_user.value, gender_user.value, link_avatar.value);
-        console.log(name_user.value, gender_user.value, link_avatar.value);
         name_user.value = '';
         gender_user.value = '';
         link_avatar.value = ''
