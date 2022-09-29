@@ -26,29 +26,11 @@ function App() {
     ])
   }
 
-  const addEditCard = (id, name_user, gender_user, link_avatar) => 
-    setUsers(users.map(user => {
-      if (user.id === id) {
-        // user.name = name_user;
-        // user.gender = gender_user;
-        // user.avatar = link_avatar;
-        return { ...users, name: name_user, gender: gender_user, avatar: link_avatar }
-      }
-    }
-    ))
-  
-  // const addEditCard = (id, name_user, gender_user, link_avatar) => {
-  //   console.log(users);
-  //   users.map(user => {
-  //     const cur_user = user.id === id;
-  //     console.log(cur_user.name)
-  //     cur_user.push({
-  //       name: name_user,
-  //       gender: gender_user,
-  //       avatar: link_avatar
-  //     })
-  //   })
-  // }
+  const addEditCard = (id, name_user, gender_user, link_avatar) =>
+    setUsers(users.map(user => user.id === id
+      ? { ...user, name: name_user, gender: gender_user, avatar: link_avatar }
+      : user
+    ));
   
   
   const deleteCard = (id) => setUsers(users.filter(user => user.id !== id));
