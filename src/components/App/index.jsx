@@ -33,6 +33,7 @@ function App() {
     ));
   
   
+  
   const deleteCard = (id) => setUsers(users.filter(user => user.id !== id));
 
   const deleteGender = (gender) => setUsers(users.filter(user => user.gender !== gender))
