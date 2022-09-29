@@ -13,6 +13,7 @@ function App() {
 
   useEffect(() => {
     const users = JSON.parse(localStorage.getItem('users')) ?? [];
+    setUsers(users);
   }, []);
 
   const addUsersCard = (name_user, gender_user, link_avatar) => {
